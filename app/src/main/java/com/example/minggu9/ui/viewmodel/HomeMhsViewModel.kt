@@ -17,7 +17,7 @@ class HomeMhsViewModel (
     private val repositoryMhs: RepositoryMhs
 ) : ViewModel() {
 
-    val homeUiState: StateFlow<HomeUiState> = repositoryMhs.getAllMhs()
+    val homeUiState: StateFlow<HomeUiState> = repositoryMhs.getAllMahasiswa()
         .filterNotNull()
         .map {
             HomeUiState (

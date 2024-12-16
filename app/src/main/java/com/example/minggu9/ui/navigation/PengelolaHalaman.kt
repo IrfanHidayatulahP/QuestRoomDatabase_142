@@ -2,7 +2,6 @@ package com.example.minggu9.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -22,7 +21,7 @@ fun PengelolaHalaman(
 ) {
     NavHost(
         navController = navController,
-        startDestination = DestinasiInsert.route) {
+        startDestination = DestinasiHome.route) {
         composable(
             route = DestinasiHome.route
         ) {
@@ -30,7 +29,7 @@ fun PengelolaHalaman(
                 onDetailClick = { nim ->
                     navController.navigate("${DestinasiDetail.route}/$nim")
                     println(
-                        "Pengelola Halaman: nim = $nim"
+                        "PengelolaHalaman: nim = $nim"
                     )
                 },
                 onAddMhs = {
@@ -70,7 +69,7 @@ fun PengelolaHalaman(
                         navController.popBackStack()
                     },
                     onEditClick = {
-                        navController.navigate("${DestinasiUpdate.route}/$it")
+                        navController.navigate("${DestinasiUpdate.route}/$nim")
                     },
                     modifier = modifier,
                     onDeleteClick = {

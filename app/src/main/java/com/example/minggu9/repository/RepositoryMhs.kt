@@ -4,9 +4,6 @@ import com.example.minggu9.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
 interface RepositoryMhs {
-    // get All Mahaiswa
-    fun getAllMhs() : Flow<List<Mahasiswa>>
-
     //getMhs
     fun getMhs(nim: String) : Flow<Mahasiswa>
 
@@ -17,5 +14,6 @@ interface RepositoryMhs {
     suspend fun updateMhs(mahasiswa: Mahasiswa)
 
     suspend fun insertMhs(mahasiswa: Mahasiswa)
+    // get All Mahaiswa
     fun getAllMahasiswa() : Flow<List<Mahasiswa>>
 }

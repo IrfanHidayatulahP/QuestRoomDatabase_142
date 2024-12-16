@@ -93,7 +93,7 @@ fun BodyHomeMhsView(
     modifier: Modifier = Modifier
 ) {
 
-    val CoroutineScope = rememberCoroutineScope()
+    val coroutineScope = rememberCoroutineScope()
     val snackbarHostState = remember { SnackbarHostState() } // SnackBar State
     when {
         homeUiState.isLoading -> {
@@ -110,14 +110,14 @@ fun BodyHomeMhsView(
             // Menampilkan Pesan Error
             LaunchedEffect(homeUiState.errorMessage) {
                 homeUiState.errorMessage?.let { message ->
-                    CoroutineScope.launch {
+                    coroutineScope.launch {
                         snackbarHostState.showSnackbar(message)
                     }
                 }
             }
         }
 
-        homeUiState.listMhs.isNotEmpty() -> {
+        homeUiState.listMhs.isEmpty() -> {
             // Menampilkan pesan jika data kosong
             Box (
                 modifier = modifier.fillMaxSize(),

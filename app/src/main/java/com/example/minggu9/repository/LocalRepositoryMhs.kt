@@ -7,10 +7,6 @@ import kotlinx.coroutines.flow.Flow
 class LocalRepositoryMhs (
     private val mahasiswaDAO: MahasiswaDAO
 ) : RepositoryMhs {
-    override fun getAllMhs(): Flow<List<Mahasiswa>> {
-        return mahasiswaDAO.getAllMahasiswa()
-    }
-
     override fun getMhs(nim: String): Flow<Mahasiswa> {
         return mahasiswaDAO.getMahasiswa(nim = nim)
     }
@@ -28,6 +24,6 @@ class LocalRepositoryMhs (
     }
 
     override fun getAllMahasiswa(): Flow<List<Mahasiswa>> {
-        return mahasiswaDAO.getALlMahasiswa()
+        return mahasiswaDAO.getAllMahasiswa()
     }
 }

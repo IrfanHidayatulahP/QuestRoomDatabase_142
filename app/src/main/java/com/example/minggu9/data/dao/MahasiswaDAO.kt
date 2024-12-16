@@ -11,13 +11,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface MahasiswaDAO {
     // Fungsi get all data
-    @Query("select * from mahasiswa")
-    fun getALlMahasiswa() : Flow<List<Mahasiswa>>
-
     @Query("select * from mahasiswa ORDER BY nama ASC")
     fun getAllMahasiswa() : Flow<List<Mahasiswa>>
 
-    @Query("select * from mahasiswa where nim = nim")
+    @Query("select * from mahasiswa where nim = :nim")
     fun getMahasiswa(nim: String): Flow<Mahasiswa>
 
     @Insert

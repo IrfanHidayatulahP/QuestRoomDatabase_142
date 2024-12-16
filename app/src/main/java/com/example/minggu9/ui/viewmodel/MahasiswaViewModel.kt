@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.PrimaryKey
 import com.example.minggu9.data.entity.Mahasiswa
 import com.example.minggu9.repository.RepositoryMhs
 import kotlinx.coroutines.launch
