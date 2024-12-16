@@ -30,7 +30,8 @@ class MahasiswaViewModel (private val repositoryMhs: RepositoryMhs) : ViewModel(
             kelas = if (event.kelas.isNotEmpty()) null else "Kelas tidak boleh Kosong",
             angkatan = if (event.angkatan.isNotEmpty()) null else "Angkatan tidak boleh Kosong"
         )
-        uiState = uiState.copy(isEntryValid = errorState)
+        uiState = uiState.copy(
+            isEntryValid = errorState)
         return errorState.isValid()
     }
     // Menyimpan data ke repository

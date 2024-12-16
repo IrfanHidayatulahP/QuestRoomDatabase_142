@@ -17,7 +17,7 @@ class UpdateMhsViewModel (
     savedStateHandle: SavedStateHandle,
     private val repositoryMhs: RepositoryMhs
 ) : ViewModel() {
-    var updateUIState by mutableStateOf(MhsUIState())
+    var updateUIState by mutableStateOf(MhsUIState(MahasiswaEvent = MahasiswaEvent()))
         private set
 
     private val _nim: String = checkNotNull(savedStateHandle[DestinasiUpdate.NIM])
@@ -33,7 +33,7 @@ class UpdateMhsViewModel (
 
     fun updateState (mahasiswaEvent: MahasiswaEvent) {
         updateUIState = updateUIState.copy(
-            MahasiswaEvent = MahasiswaEvent(),
+            MahasiswaEvent = mahasiswaEvent,
         )
     }
 
